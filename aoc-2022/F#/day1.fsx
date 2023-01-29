@@ -8,6 +8,7 @@ let sums =
 let partOne = 
     sums
     |> Array.max
+    
 let partTwo = 
     sums 
     |> Array.sortDescending
