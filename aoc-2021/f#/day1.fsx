@@ -9,7 +9,7 @@ let partOne arr =
         then acc + 1 else acc) 0
 
 // partOne measurements
-
+    
 let partTwo = 
     Array.windowed 3 measurements
     |> Array.map Array.sum
