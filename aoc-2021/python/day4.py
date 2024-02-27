@@ -52,6 +52,20 @@ def part_one():
                     if number.value == number_drawn:
                         number.drawn = True
                         if is_winner(board):
-                            return compute_score(board) * number_drawn   
+                            return compute_score(board) * number_drawn
 print(part_one())
 
+boards_won = [False] * len(boards)
+
+def part_two():
+    for number_drawn in numbers_drawn:
+        for i, board in enumerate(boards):
+            for row in board:
+                for number in row:
+                    if number.value == number_drawn:
+                        number.drawn = True
+                        if is_winner(board):
+                            boards_won[i] = True
+                            if all(boards_won):
+                                return compute_score(board) * number_drawn
+print(part_two())
