@@ -3,7 +3,8 @@ namespace Program {
         
         static void Main() {
             // Day1 _ = new();
-            Day2 _ = new();
+            // Day2 _ = new();
+            Day3 _ = new();
             
         }
     }
