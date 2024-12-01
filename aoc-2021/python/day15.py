@@ -2,6 +2,16 @@ from queue import PriorityQueue
 
 levels = [[int(y) for y in list(x.rstrip())] for x in open('./input/day15.txt')]
 
+# lav en kø
+# smid første ting i køen
+# lav et sæt med besøgte knuder
+# sålænge køen ikke er tom:
+    # tag en ting ud af køen
+    # se evt. om det er mål
+    # hvis den er besøgt, gå videre
+    # ellers smid den i besøgte
+    # kig på naboerne og læg dem i køen
+
 def part_one(levels=levels):
     PQ = PriorityQueue()
     PQ.put((levels[0][0], (0, 0)))
