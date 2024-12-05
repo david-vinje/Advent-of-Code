@@ -25,10 +25,8 @@ def part_one():
   
 
 def problem_dampen(levels: list):
-  for i, e in enumerate(levels):
-    dampened = levels.copy()
-    dampened.remove(e)
-    # dampened = levels[:i] + levels[i+1:]
+  for i, _ in enumerate(levels):
+    dampened = levels[:i] + levels[i+1:]
     if safety_check(dampened):
       return True
   return False
