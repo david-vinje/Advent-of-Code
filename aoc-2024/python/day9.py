@@ -56,14 +56,13 @@ def part_two(s):
     file_size, id, chunk_end = chunks.pop()
     chunk_start = chunk_end - file_size
     i = j
-    space_found = False
-    first_found = False
+    space_found, first_space = False, False
     while i < chunk_start and not space_found:
       while i < chunk_start and s[i] != '.':
         i += 1
-      if not first_found:
+      if not first_space:
         j = i
-        first_found = True
+        first_space = True
       space = 0
       while i < chunk_start and s[i] == '.' :
         space += 1
