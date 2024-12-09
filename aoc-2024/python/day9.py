@@ -48,29 +48,7 @@ def part_one(s):
   s[left] = '.'
   # print(''.join(s))
   compute(s.copy())
-  
-<<<<<<< HEAD
-=======
 
-# def part_two(s):
-#   while chunks:
-#     file_size, id, chunk_position = chunks.pop()
-#     for i, (space, position) in enumerate(free_spaces):
-#       if file_size <= space:
-#         print(''.join(s))
-#         print(free_spaces)
-#         chunk = s[chunk_position-file_size : chunk_position]
-#         # print(chunk)
-#         # empty = s[position : position + file_size]
-#         s[position : position + file_size] = [id] * file_size
-#         s[chunk_position-file_size : chunk_position] = ['.'] * file_size
-#         # free_spaces[i] = (space - file_size, position + file_size)
-#         break
-#   print(''.join(s)) 
-#   print(free_spaces)
-#   compute(s.copy())
-
->>>>>>> 8eaef424a5d6b92f2d8d483f8fece6134e78681c
 def part_two(s):
   n = len(s)
   j = 0
