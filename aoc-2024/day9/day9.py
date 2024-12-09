@@ -54,18 +54,20 @@ def part_one(s):
   compute(s.copy())
 
 def part_two(s):
+  n = len(s)
   j = 0
   while chunks:
     file_size, id, chunk_end = chunks.pop()
     chunk_start = chunk_end - file_size
     i = j
-    space_found, first_space = False, False
+    space_found = False
+    first_found = False
     while i < chunk_start and not space_found:
       while i < chunk_start and s[i] != '.':
         i += 1
-      if not first_space:
+      if not first_found:
         j = i
-        first_space = True
+        first_found = True
       space = 0
       while i < chunk_start and s[i] == '.' :
         space += 1
