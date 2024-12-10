@@ -64,7 +64,7 @@ def part_two(s):
         j = i
         first_space = True
       space = 0
-      while i < chunk_start and s[i] == '.' :
+      while i < chunk_start and s[i] == '.':
         space += 1
         if file_size == space:
           # print(''.join(s))
