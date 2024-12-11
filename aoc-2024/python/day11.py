@@ -1,35 +1,48 @@
-stones = open('./input/day11.txt').read().split()
+def transform(stone):
+  if stone == '0':
+    return ['1']
+  if len(stone) % 2 == 0:
+    m = int(len(stone) / 2)
+    left = str(int(stone[:m]))
+    right = str(int(stone[m:]))
+    return [left, right]  
+  return [str(int(stone) * 2024)]
 
 def blink(stones: list):
   new_stones = []
   for stone in stones:
-    if stone == '0':
-      new_stones.append('1')
-    elif len(stone) % 2 == 0:
-      m = int(len(stone) / 2)
-      left, right = int(stone[:m]), int(stone[m:])
-      new_stones.append(str(left))
-      new_stones.append(str(right))
-    else:
-      stone = int(stone) * 2024
-      new_stones.append(str(stone))
+    new_stones += transform(stone)
   return new_stones
 
-# stones = list(range(1, 10))
-# for i in range(1, 10):
-#   stone = str(i * 2024)
-#   m = int(len(stone) / 2)
-#   left, right = stone[:m], stone[m:]
-#   m = int(len(left) / 2)
-#   a, b = left[:m], left[m:]
-#   c, d = right[:m], right[m:]
-#   print(i, ':', [a, b, c, d])
+def part_one(n):
+  stones = [int(x) for x in open('./input/day11.txt').read().split()]
+  for i in range(n+1):
+    stones = open('./input/day11.txt').read().split()
+    for _ in range(i):
+      # print(' '.join(stones))
+      stones = blink(stones)
+    print(i, len(stones))
+part_one(25)
 
-# for stone in ['20', '44', '68', '92', '16']:
-#   m = int(len(stone) / 2)
-#   left, right = stone[:m], stone[m:]
-#   print([left, right])
-  
-for i in range(25):
-  stones = blink(stones)
-print(len(stones))
+# def part_two(n):
+#   stones = {}
+#   for stone in open('./input/day11.txt').read().split():
+#     stones.setdefault(stone, 0)
+#     stones[stone] += 1
+#   print(stones)
+#   for stone, count in stones.items():
+#     new_stones = stones.copy()
+#     if stone == '0':
+#       new_stones.setdefault('1', 0)
+#       new_stones['1'] += count
+#       new_stones[0] = 0
+#     elif len(stone) % 2 == 0:
+#       m = int(len(stone) / 2)
+#       left = str(int(stone[:m]))
+#       right = str(int(stone[m:]))
+#       new_stones.setdefault(left, 0)
+#       new_stones.setdefault(right, 0)
+#     else:
+#       stone = int(stone) * 2024
+#       new_stones.append(str(stone))
+# part_two(25)
