@@ -50,7 +50,6 @@ def part_one(s):
   compute(s.copy())
 
 def part_two(s):
-  n = len(s)
   j = 0
   while chunks:
     file_size, id, chunk_end = chunks.pop()
@@ -64,7 +63,7 @@ def part_two(s):
         j = i
         first_space = True
       space = 0
-      while i < chunk_start and s[i] == '.':
+      while i < chunk_start and s[i] == '.' :
         space += 1
         if file_size == space:
           # print(''.join(s))
