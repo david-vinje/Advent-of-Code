@@ -31,6 +31,7 @@ for i, row, in enumerate(garden):
       region = search(i, j)
       visited.update(region)
       perimeter = get_perimeter(region)
+      print(plant, perimeter)
       price = len(region) * len(perimeter)
       total += price
 print(total)
