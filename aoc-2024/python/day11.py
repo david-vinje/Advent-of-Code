@@ -37,5 +37,5 @@ def part_two(n):
   # print(stones)
   print(sum(stones.values()))
   
-# part_one(25)
+part_one(25)
 part_two(75)
