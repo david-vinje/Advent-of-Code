@@ -24,6 +24,16 @@ def get_perimeter(region):
         perimeter.append((x, y))
   return perimeter
 
+def count_sides(perimeter: list, region):
+  # count = 0
+  sides = set()
+  for (i, j) in region:
+    for (x, y) in [(i+1, j+1), (i-1, j+1), (i+1, j-1), (i-1, j-1)]:
+      if (x, y) not in perimeter:
+        # count += 1
+        sides.add((x, y))
+  return sides
+
 total = 0
 for i, row, in enumerate(garden):
   for j, plant in enumerate(row):
@@ -31,7 +41,9 @@ for i, row, in enumerate(garden):
       region = search(i, j)
       visited.update(region)
       perimeter = get_perimeter(region)
-      print(plant, perimeter)
-      price = len(region) * len(perimeter)
+      # price = len(region) * len(perimeter)
+      sides = count_sides(perimeter, region)
+      price = len(region) * len(sides)
+      print(plant, len(sides), sides)
       total += price
 print(total)
