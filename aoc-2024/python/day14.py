@@ -18,8 +18,9 @@ robots = [
 for robot in robots:
   (x, y), _ = robot
   tiles[y][x] += 1
-  
-def move(robot):
+    
+def move(robot, j):
+  global highest
   (x, y), (vx, vy) = robot
   dx, dy = (x+vx) % m, (y+vy) % n
   tiles[y][x] = max(0, tiles[y][x]-1)
@@ -37,27 +38,29 @@ def tiles_to_str():
     s += '\n'
   return s
 
-for j in range(200):
-  for i, robot in enumerate(robots):
-    robots[i] = move(robot) 
-  if j > 99:
-    f = open("./trees/{j}.txt".format(j=j), "w")
-    f.write(tiles_to_str())
-    f.close()
-
+def tiles_to_str():
+  s = '\n'
+  for row in tiles:
+    for tile in row:
+      if tile == 0:
+        s += '.'
+      else:
+        s += str(tile)
+    s += '\n'
+  return s
     
-res = tiles_to_str()
-ans = """
-...........
-...........
-...........
-...........
-...........
-...........
-...........
-"""
-print(res)
-print(res == ans)
+# res = tiles_to_str()
+# ans = """
+# ...........
+# ...........
+# ...........
+# ...........
+# ...........
+# ...........
+# ...........
+# """
+# print(res)
+# print(res == ans)
 
 counts = [0, 0, 0, 0]
 x, y = int(n/2), int(m/2)
@@ -80,3 +83,25 @@ safety_factor = 1
 for count in counts:
   safety_factor *= count
 print(safety_factor)
+
+def find_tree(j):
+  count = 0
+  for row in tiles:
+    for tile in row:
+      if tile != 0:
+        count += 1
+        if count > 20:
+          return True
+      else:
+        count = 0
+  return False
+
+j = 0
+while True:
+  j += 1
+  for i, robot in enumerate(robots):
+    robots[i] = move(robot, j) 
+  if find_tree(j):
+    print(tiles_to_str())
+    print(j)
+    break
