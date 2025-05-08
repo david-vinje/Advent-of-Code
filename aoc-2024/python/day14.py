@@ -79,29 +79,17 @@ for i, row in enumerate(tiles):
       else:
         counts[3] += tiles[i][j]
 
-safety_factor = 1
-for count in counts:
-  safety_factor *= count
-print(safety_factor)
+def compute_safety():
+  safety_factor = 1
+  for count in counts:
+    safety_factor *= count
+  return safety_factor
 
-def find_tree(j):
-  count = 0
-  for row in tiles:
-    for tile in row:
-      if tile != 0:
-        count += 1
-        if count > 20:
-          return True
-      else:
-        count = 0
-  return False
 
-j = 0
-while True:
-  j += 1
+for j in range(1, 7624):
   for i, robot in enumerate(robots):
     robots[i] = move(robot, j) 
-  if find_tree(j):
+  safety_factor = compute_safety()
+  if j > 7622:    
     print(tiles_to_str())
     print(j)
-    break

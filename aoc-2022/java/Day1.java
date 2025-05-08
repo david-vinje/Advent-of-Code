@@ -7,7 +7,8 @@ import java.util.List;
 
 public class Day1 {
   public static void main(String[] args) throws IOException {
-    BufferedReader reader = new BufferedReader(new FileReader("./input/day1.txt"));
+    var cwd = System.getProperty("user.dir");
+    BufferedReader reader = new BufferedReader(new FileReader(cwd + "/input/day1.txt"));
     List<Integer> calories = new ArrayList<>();
     int sum = 0;
     String line = reader.readLine();

@@ -18,7 +18,6 @@ for raw_machine in raw_machines:
 def min_tokens(machine, ceiling = None):
   cost = None
   ax, ay, bx, by, tx, ty = machine
-  # print(ax, ay, bx, by, tx, ty)
   AN = max(ceil(tx / ax), ceil(ty / ay))
   BN = max(ceil(tx / bx), ceil(ty / by))
   if ceiling:
@@ -32,15 +31,41 @@ def min_tokens(machine, ceiling = None):
           cost = price
         elif price < cost:
           cost = price
-  # if cost:
-  #   print(cost)
   return cost
 
+
+import cvxpy as cp
+import numpy as np
+
 total = 0
+
+def linprog(machine):
+  moveX = np.array([machine[0], machine[2]])
+  moveY = np.array([machine[1], machine[3]])
+
+  SelectionX = cp.Variable(len(moveX), integer=True)
+  SelectionY = cp.Variable(len(moveY), integer=True)
+
+  constraints = [
+      SelectionX >= 0,
+      SelectionY >= 0,
+      SelectionX @ moveX == machine[4],
+      SelectionY @ moveY == machine[5],
+  ]
+
+  objFunction = 3 * cp.sum(SelectionX) + 1 * cp.sum(SelectionY)
+
+  problem = cp.Problem(cp.Minimize(objFunction), constraints)
+
+  problem.solve(solver=cp.GLPK_MI)
+  if problem.solution.status == 'optimal':
+    tokens = int(SelectionX.value[0]*3 + SelectionX.value[1])
+    # total += tokens
+    print(problem.value)
+    return tokens    
+
 for machine in machines:
-  tokens = min_tokens(machine, 101)
-  # tokens = min_tokens(machine)
+  tokens = min_tokens(machine)
   if tokens:
-    total += tokens
-print(total)
+    print(tokens, linprog(machine))
   
