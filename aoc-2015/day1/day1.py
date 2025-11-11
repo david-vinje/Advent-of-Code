@@ -1,4 +1,4 @@
-floors = open('./input/day1.txt').readline()
+floors = open('.//day1.txt').readline()
 
 count = 0
 for floor in floors:
