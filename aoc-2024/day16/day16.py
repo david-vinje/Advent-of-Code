@@ -1,6 +1,10 @@
+import os
+
+path = os.path.dirname(os.path.abspath(__file__))
+
 S, E = (0,0), (0,0)
 map = []
-for i, row in enumerate(open('.//day16.txt')):
+for i, row in enumerate(open(path + '/day16.txt')):
   map.append(list(row.strip()))
   for j, elem in enumerate(row):
     if elem == 'S':

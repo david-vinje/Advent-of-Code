@@ -1,4 +1,4 @@
-garden = [list(row.strip()) for row in open('.//day12.txt')]
+garden = [list(row.strip()) for row in open(path + '/day12.txt')]
 visited = set()
 n = len(garden)
 

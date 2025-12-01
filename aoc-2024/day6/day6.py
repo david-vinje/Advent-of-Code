@@ -1,6 +1,10 @@
+import os
+
+path = os.path.dirname(os.path.abspath(__file__))
+
 x, y, dir = 0, 0, 0
 map = []
-for i, row in enumerate(open('.//day6.txt')):
+for i, row in enumerate(open(path + '/day6.txt')):
   map.append(list(row))
   for j, elem in enumerate(row):
     if elem == '^':

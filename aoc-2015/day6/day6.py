@@ -1,8 +1,11 @@
 import numpy as np
 from time import time
+import os
+
+path = os.path.dirname(os.path.abspath(__file__))
 
 n = 1000
-lines = [x.split(' ') for x in open('aoc-2015/input/day6.txt')]
+lines = [x.split(' ') for x in open(path + '/day6.txt')]
 
 def solve(g):
     t = time()

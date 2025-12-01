@@ -1,4 +1,8 @@
-floors = open('.//day1.txt').readline()
+import os
+
+path = os.path.dirname(os.path.abspath(__file__))
+
+floors = open(path + '/day1.txt').readline()
 
 count = 0
 for floor in floors:

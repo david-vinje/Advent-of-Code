@@ -10,7 +10,7 @@ lines = [
     [
         [int(coord) for coord in coords.split(',')] 
         for coords in line.split(' -> ')
-    ] for line in open('..//day5.txt').readlines()
+    ] for line in open(path + '/day5.txt').readlines()
 ]
 
 def part_one():

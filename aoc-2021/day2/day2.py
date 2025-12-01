@@ -1,4 +1,4 @@
-lines = [(a, int(b)) for (a, b) in [x.split() for x in open('..//day2.txt').readlines()]]
+lines = [(a, int(b)) for (a, b) in [x.split() for x in open(path + '/day2.txt').readlines()]]
 
 def part_one():
     depth, position = 0, 0

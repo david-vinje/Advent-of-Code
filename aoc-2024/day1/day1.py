@@ -1,4 +1,8 @@
-nums = [[int(y) for y in x.split()] for x in open('./day1.txt')]
+import os
+
+path = os.path.dirname(os.path.abspath(__file__))
+
+nums = [[int(y) for y in x.split()] for x in open(path + '/day1.txt')]
 lists = [[], []]
 for (a, b) in nums:
   lists[0].append(a)

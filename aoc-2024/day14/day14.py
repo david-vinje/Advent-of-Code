@@ -1,3 +1,7 @@
+import os
+
+path = os.path.dirname(os.path.abspath(__file__))
+
 # n, m = 7, 11
 n, m = 103, 101
 tiles = []
@@ -12,7 +16,7 @@ robots = [
     [int(z) for z in y.split('=')[1].split(',')]
     for y in x.split()
   ]
-  for x in open('.//day14.txt')
+  for x in open(path + '/day14.txt')
 ]
 
 for robot in robots:

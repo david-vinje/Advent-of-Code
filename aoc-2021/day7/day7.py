@@ -1,5 +1,5 @@
 crabs = [
-    int(x) for x in open('.//day7.txt').readline().split(',')
+    int(x) for x in open(path + '/day7.txt').readline().split(',')
 ]
 crabs.sort()
 

@@ -26,6 +26,9 @@ def part_one(program):
         opcode = program[i]
     print(program[0])
     
+def part_two(program):
+    pass
+    
 
 for program in programs:
     part_one(program)

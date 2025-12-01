@@ -1,4 +1,8 @@
-lines = [x.rstrip('\n').split(' ') for x in open('aoc-2015/input/day7.txt')]
+import os
+
+path = os.path.dirname(os.path.abspath(__file__))
+
+lines = [x.rstrip('\n').split(' ') for x in open(path + '/day7.txt')]
 wires = {}
 read = set()
 i = 0

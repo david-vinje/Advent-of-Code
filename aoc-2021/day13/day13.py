@@ -1,6 +1,6 @@
 import numpy as np
 
-dots, instructions = open('.//day13.txt').read().split('\n\n')
+dots, instructions = open(path + '/day13.txt').read().split('\n\n')
 dots = {(int(x.split(',')[0]), int(x.split(',')[1])) for x in dots.split('\n')}
 instructions = [line.split()[2] for line in instructions.split('\n')]
 

@@ -1,4 +1,4 @@
-connections = [x.rstrip().split('-') for x in  open('.//day12.txt').readlines()]
+connections = [x.rstrip().split('-') for x in  open(path + '/day12.txt').readlines()]
 map: dict[str, list[str]] = {}
 for a, b in connections:
     map.setdefault(a, [])

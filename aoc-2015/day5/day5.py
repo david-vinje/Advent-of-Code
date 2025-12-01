@@ -1,5 +1,8 @@
-# read input
-lines = open('aoc-2015/input/day5.txt').readlines()
+import os
+
+path = os.path.dirname(os.path.abspath(__file__))
+
+lines = open(path + '/day5.txt').readlines()
 
 # part one
 def is_nice(s):

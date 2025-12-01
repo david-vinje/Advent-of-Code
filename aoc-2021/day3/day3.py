@@ -1,4 +1,4 @@
-lines = [x.rstrip('\n') for x in open('.//day3.txt').readlines()]
+lines = [x.rstrip('\n') for x in open(path + '/day3.txt').readlines()]
 
 def part_one():
     count = [(0, 0)] * len(lines[0])

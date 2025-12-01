@@ -1,6 +1,6 @@
 from itertools import combinations
 equations = []
-for line in open('.//day7.txt'):
+for line in open(path + '/day7.txt'):
   test, nums = line.split(': ')
   test = int(test)
   nums = [int(num) for num in nums.split()]

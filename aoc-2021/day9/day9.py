@@ -1,4 +1,4 @@
-heightmap = [[int(y) for y in list(x.removesuffix('\n'))] for x in open('.//day9.txt').readlines()]
+heightmap = [[int(y) for y in list(x.removesuffix('\n'))] for x in open(path + '/day9.txt').readlines()]
 n, m = len(heightmap), len(heightmap[0])
 
 def part_one():

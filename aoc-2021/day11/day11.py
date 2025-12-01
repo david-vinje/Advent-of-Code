@@ -1,4 +1,4 @@
-grid = [[int(y) for y in list(x.rstrip())] for x in open('.//day11.txt')]
+grid = [[int(y) for y in list(x.rstrip())] for x in open(path + '/day11.txt')]
 n, m = len(grid), len(grid[0])
 
 def part_one():

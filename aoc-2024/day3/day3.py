@@ -1,6 +1,10 @@
 import re
+import os
 
-lines = open('./day3.txt')
+path = os.path.dirname(os.path.abspath(__file__))
+
+
+lines = open(path + '/day3.txt')
 total = 0
 enabled = True
 for line in lines:

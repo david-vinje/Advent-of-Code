@@ -1,5 +1,5 @@
 def solve(n):
-    lanterns = [int(x) for x in open('.//day6.txt').readline().split(',')]
+    lanterns = [int(x) for x in open(path + '/day6.txt').readline().split(',')]
     counter = {}
     for i in range(9): 
         counter.setdefault(i, 0)

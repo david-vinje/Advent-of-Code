@@ -1,4 +1,8 @@
-disk_map = [int(x) for x in list(open('.//day9.txt').read())]
+import os
+
+path = os.path.dirname(os.path.abspath(__file__))
+
+disk_map = [int(x) for x in list(open(path + '/day9.txt').read())]
 id = 0
 i = 0
 n = len(disk_map) - 1

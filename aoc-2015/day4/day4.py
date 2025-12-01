@@ -1,6 +1,5 @@
 import hashlib
 
-# read input
 secret_key = 'bgvyzdsv'
 
 def count_zeros(n, s):

@@ -1,6 +1,10 @@
+import os
+
+path = os.path.dirname(os.path.abspath(__file__))
+
 reports = [
   [int(x) for x in report.split()]
-  for report in open('./day2.txt')
+  for report in open(path + '/day2.txt')
 ]
 
 def safety_check(levels):

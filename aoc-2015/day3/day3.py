@@ -1,5 +1,8 @@
-# read input
-input = open('aoc-2015/input/day3.txt').readline()
+import os
+
+path = os.path.dirname(os.path.abspath(__file__))
+
+input = open(path + '/day3.txt').readline()
 
 def move(pos, dir):
     r, c = pos

@@ -1,6 +1,10 @@
+import os
+
+path = os.path.dirname(os.path.abspath(__file__))
+
 chart = []
 trailheads = []
-for i, row in enumerate(open('.//day10.txt')):
+for i, row in enumerate(open(path + '/day10.txt')):
   tmp = [] 
   for j, elem in enumerate(row.strip()):
     if elem == '.':

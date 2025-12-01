@@ -1,5 +1,8 @@
+import os
 
-letters = [list(line) for line in open('./day4.txt')]
+path = os.path.dirname(os.path.abspath(__file__))
+
+letters = [list(line) for line in open(path + '/day4.txt')]
 n = len(letters)
 word = 'XMAS', 0
 count = 0

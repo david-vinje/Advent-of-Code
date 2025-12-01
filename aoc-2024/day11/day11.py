@@ -1,3 +1,7 @@
+import os
+
+path = os.path.dirname(os.path.abspath(__file__))
+
 def transform(stone):
   if stone == '0':
     return ['1']
@@ -15,14 +19,14 @@ def blink(stones: list):
   return new_stones
 
 def part_one(n):
-    stones = open('.//day11.txt').read().split()
+    stones = open(path + '/day11.txt').read().split()
     for _ in range(n):
       stones = blink(stones)
     print(len(stones))
 
 def part_two(n):
   stones = {}
-  for stone in open('.//day11.txt').read().split():
+  for stone in open(path + '/day11.txt').read().split():
     stones.setdefault(stone, 0)
     stones[stone] += 1
   for _ in range(n):

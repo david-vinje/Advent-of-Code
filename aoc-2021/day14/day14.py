@@ -1,7 +1,7 @@
 from collections import Counter
 from math import ceil
 
-template, mapping = open('.//day14.txt').read().split('\n\n')
+template, mapping = open(path + '/day14.txt').read().split('\n\n')
 rules = dict()
 for rule in mapping.split('\n'):
     pair, insertion = rule.split(' -> ')

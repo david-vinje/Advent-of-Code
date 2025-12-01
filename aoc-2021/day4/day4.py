@@ -1,4 +1,4 @@
-lines = open('.//day4.txt').read().split('\n\n')
+lines = open(path + '/day4.txt').read().split('\n\n')
 
 numbers_drawn = [int(number) for number in lines[0].split(',')]
 

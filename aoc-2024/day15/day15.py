@@ -1,4 +1,9 @@
-raw_map, instructions = open('.//day15.txt').read().split("\n\n")
+import os
+
+path = os.path.dirname(os.path.abspath(__file__))
+
+raw_map, instructions = open(path + '/day15.txt').read().split("\n\n")
+
 map, robot = [], (0, 0)
 for i, row in enumerate(raw_map.split('\n')):
   map.append(list(row))
@@ -72,7 +77,7 @@ ans = """
 print(res)
 print(res == ans)
 
-raw_map, instructions = open('.//day15.txt').read().split("\n\n")
+raw_map, instructions = open(path + '/day15.txt').read().split("\n\n")
 map, robot = [], (0, 0)
 for i, row in enumerate(raw_map.split('\n')):
   map.append(list(row))

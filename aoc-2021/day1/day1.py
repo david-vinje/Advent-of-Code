@@ -1,4 +1,4 @@
-nums = [int(x) for x in open('..//day1.txt').readlines()]
+nums = [int(x) for x in open(path + '/day1.txt').readlines()]
 
 def part_one():
     count = 0

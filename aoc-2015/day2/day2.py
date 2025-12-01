@@ -1,6 +1,10 @@
+import os
+
+path = os.path.dirname(os.path.abspath(__file__))
+
 all_dims = [
   [int(y) for y in x.split('x')]
-  for x in open('day2/day2.txt')
+  for x in open(path + '/day2.txt')
 ]
 
 total = 0

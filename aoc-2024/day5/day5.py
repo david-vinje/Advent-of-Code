@@ -1,4 +1,8 @@
-raw_orders, raw_updates = [x.split() for x in open('.//day5.txt').read().split("\n\n")]
+import os
+
+path = os.path.dirname(os.path.abspath(__file__))
+
+raw_orders, raw_updates = [x.split() for x in open(path + '/day5.txt').read().split("\n\n")]
 
 orders = {}
 for order in raw_orders:

@@ -1,7 +1,7 @@
 lines = [
     [ 
      io.split() for io in line.split(' | ')
-    ] for line in open('.//day8.txt').readlines()
+    ] for line in open(path + '/day8.txt').readlines()
 ]
 
 def part_one():

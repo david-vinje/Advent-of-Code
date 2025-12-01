@@ -1,6 +1,10 @@
+import os
+
+path = os.path.dirname(os.path.abspath(__file__))
+
 chart = []
 antennas = {}
-for i, row in enumerate(open('.//day8.txt')):
+for i, row in enumerate(open(path + '/day8.txt')):
   tmp = []
   for j, elem in enumerate(row.strip()):
     tmp.append(elem)

@@ -1,6 +1,9 @@
 from math import ceil
+import os
 
-raw_machines = open('.//day13.txt').read().split('\n\n')
+path = os.path.dirname(os.path.abspath(__file__))
+
+raw_machines = open(path + '/day13.txt').read().split('\n\n')
 machines = []
 for raw_machine in raw_machines:
   machine = []

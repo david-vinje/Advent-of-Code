@@ -1,6 +1,6 @@
 from queue import PriorityQueue
 
-levels = [[int(y) for y in list(x.rstrip())] for x in open('.//day15.txt')]
+levels = [[int(y) for y in list(x.rstrip())] for x in open(path + '/day15.txt')]
 
 # lav en kø
 # smid første ting i køen

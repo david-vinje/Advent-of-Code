@@ -1,4 +1,4 @@
-lines = [list(x.rstrip()) for x in open('.//day10.txt').readlines()]
+lines = [list(x.rstrip()) for x in open(path + '/day10.txt').readlines()]
 opening = {'[', '(', '{', '<'}
 pairs = {
     ']': '[',
