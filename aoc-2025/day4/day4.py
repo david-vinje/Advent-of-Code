@@ -9,6 +9,8 @@ def solve(diagram=None, total=0, removable=False):
   n, m = len(diagram), len(diagram[0])
   for i, row in enumerate(diagram):
     for j, elem in enumerate(row):
+      if elem != "@":
+        continue
       count = 0
       for ix, jx in [
         (i - 1, j),
@@ -27,7 +29,7 @@ def solve(diagram=None, total=0, removable=False):
           if neighbor == "@" or neighbor == 'x':
             count += 1
 
-      if count < 4 and elem == "@":
+      if count < 4:
         if removable:
           diagram[i][j] = "."
         else:
